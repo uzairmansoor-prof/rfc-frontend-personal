@@ -14,7 +14,7 @@ dist
 dist-ssr
 *.local
 runtime-env.js
-.env.dev
+# .env.dev
 
 # Editor directories and files
 .vscode/*
