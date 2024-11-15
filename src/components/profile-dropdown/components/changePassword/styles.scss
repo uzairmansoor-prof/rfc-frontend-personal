@@ -1,0 +1,99 @@
+@import "../../../../assets/sass/variables";
+
+.discard-popup-confirm--wrapper {
+  .ant-popover-content>.ant-popover-inner>.ant-popover-inner-content>.ant-popconfirm-inner-content {
+    &>.ant-popconfirm-buttons {
+      .ant-btn-primary-dark {
+        background-color: $btn-primary-color;
+        color: black;
+      }
+    }
+  }
+}
+.change-password-modal {
+  &-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #0a2595;
+    font-size: 1.15rem;
+  }
+
+  &-button-container {
+    display: flex;
+    justify-content: center;
+
+    .change-password-modal-button {
+      background-color: $btn-primary-color;
+      width: 150px;
+      height: 36px;
+    }
+  }
+
+  &-body {
+    display: flex;
+    column-gap: 24px;
+    margin-top: 1.2rem;
+
+    &-input-container {
+      padding-top: 0px;
+    }
+
+    &-group {
+      margin-block: 1rem 0.8rem;
+      position: relative;
+
+      &:first-child {
+        margin-top: 0px;
+      }
+
+      &-input {
+        height: 42px;
+        border: 2px solid #0a2595;
+
+        svg {
+          fill: #0a2595;
+        }
+      }
+
+      .label {
+        position: absolute;
+        z-index: 10;
+        top: -10.5px;
+        left: 12px;
+        background: white;
+        color: #0a2595;
+        line-height: 12px;
+      }
+
+      .error {
+        line-height: 1;
+        font-size: 12px;
+        margin-bottom: -7px;
+        margin-top: 7px;
+        margin-left: 5px;
+        color: red;
+      }
+
+      .error-label {
+        color: red;
+      }
+
+      .error-outline {
+        border-color: red !important;
+
+        .ant-select-selector {
+          border-color: red !important;
+        }
+
+        svg {
+          fill: red;
+        }
+      }
+    }
+
+    &-input {
+      flex-grow: 1;
+    }
+  }
+}

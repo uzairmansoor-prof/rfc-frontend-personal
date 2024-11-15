@@ -1,0 +1,5 @@
+.header-container {
+  // box-shadow: 0px 1.8769230842590332px 15.015384674072266px 0px #6868681a;
+  @apply pl-[36px] pr-6  flex items-center justify-between;
+  @apply bg-primary-plan text-white h-[4.2rem] leading-normal #{!important};
+}

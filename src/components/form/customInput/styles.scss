@@ -1,0 +1,25 @@
+.ant-form-item-control-input-content {
+  .ant-input-disabled {
+    background-color: rgba(207, 207, 207, 0.3019607843);
+    color: darkgray;
+  }
+}
+.ant-input,
+.ant-input-affix-wrapper {
+  border-radius: 5px;
+  // padding: 4px 4px 4px;
+}
+.ant-input-outlined {
+  // border-color: #e2bff3;
+  @apply border-border;
+}
+.ant-input-outlined:hover,
+.ant-input-outlined:focus,
+.ant-input-outlined:focus-within {
+
+  @apply border-primary-plan;
+}
+.ant-select-selection-placeholder {
+  text-transform: capitalize;
+}
+

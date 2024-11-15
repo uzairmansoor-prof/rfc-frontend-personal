@@ -1,0 +1,22 @@
+.section-wrapper {
+    border: 1px solid #004AADB2;
+    border-radius: .4rem;
+    margin: 0.8rem 0rem;
+    padding-block: .5rem;
+
+    h3 {
+        background-color: white;
+        width: fit-content;
+        position: relative;
+        top: -23px;
+        left: 23px;
+        padding: 1px 3px;
+        z-index: 2;
+    }
+
+    .section-content {
+        padding-inline: 1.5rem;
+        position: relative;
+        top: -7px;
+    }
+}

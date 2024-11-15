@@ -1,0 +1,210 @@
+@import "@/assets/sass/variables";
+
+.ant-menu-inline-collapsed-tooltip {
+  display: none;
+}
+
+.ant-layout-sider {
+  @apply bg-secondary-light #{!important};
+
+  .menu-container {
+    border-inline-end: 0px !important;
+    &>.ant-menu-item {
+      position: relative;
+      padding-inline: 0 !important;
+      padding-block: .7rem !important;
+      margin: 0;
+      height: fit-content;
+      border-radius: 0;
+      @apply bg-secondary-light text-primary;
+      width: 100%;
+   
+      &-active,
+      &:hover,
+      &-selected {
+        @apply bg-white text-primary #{!important};
+
+        &>.ant-menu-title-content {
+          // @apply text-primary-dark #{!important};
+          @apply font-bold;
+          svg {
+            @apply fill-primary  #{!important};
+            
+
+            // .inactive-fill-white {
+            //   @apply fill-primary-dark #{!important};
+
+            // }
+
+            // .active-fill-white {
+            //   @apply fill-white #{!important};
+
+            // }
+
+            // .active-fill-primary {
+            //   @apply fill-primary-dark #{!important};
+
+            // }
+          }
+        }
+      }
+
+      &>.ant-menu-title-content {
+        transition: none;
+        line-height: normal;
+        height: 100%;
+
+        &>a {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          font-size: 0.85rem;
+
+          &>img {
+            width: 55px;
+          }
+
+          &>.menu-item-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            // padding-left: 0;
+
+            &>.ant-menu-text {
+              padding-inline-start: 0 !important;
+            }
+
+
+            &> :last-child {
+              //menu title text
+              padding-inline-start: .75rem;
+            }
+
+            .menu-item-svg-icon {
+              width: 20px;
+              display: flex;
+
+            }
+          }
+        }
+
+        svg {
+          height: 28px;
+          fill: white;
+
+          .inactive-fill-white {
+            fill: white;
+          }
+
+          .active-fill-white,
+          .active-fill-primary {
+            fill: black;
+          }
+
+
+        }
+      }
+
+      // &::after {
+      //   height: 100%;
+      //   width: 4px;
+      //   @apply bg-primary-dark;
+      //   border-radius: 2px;
+      // }
+
+    }
+
+    &>.ant-divider {
+      margin:0 auto;
+      min-width: 75%;
+      width: 75%;
+      border-width: 0.5px;
+      background-color: #0743931F;
+    }
+  }
+
+  // &-collapsed {
+  //   //background-color: yellow !important;
+
+  //   .menu-container>.ant-menu-item {
+  //     padding: 0px !important;
+  //      padding-inline-start: 0px !important;
+  //     border-radius: 0px;
+  //     width: calc(100% - 0px);
+  //      margin-top: 0px;
+  //      margin-inline: 0px;
+
+  //    // background-color: red;
+  //     .ant-menu-title-content {
+  //       justify-content: center !important;
+  //       //background-color: blue;
+  //       &>a.active{
+  //         .ride-icon-empty{
+  //           display:none;
+  //         }
+  //         .ride-icon-filled{
+  //           display:block;
+  //         }
+  //       }
+  //       &>a {
+  //         &>.menu-item-wrapper {
+  //           .menu-item-svg-icon {
+  //             width: 25px !important;
+  //             display: grid;
+  //             place-items: center;
+
+  //           }
+  //           .ant-menu-text {
+  //             display: none;
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+
+  //   .company-logo > img {
+  //     @apply  lgMax:w-4/6
+  //     }
+  // } 
+
+
+  // .ant-layout-sider-trigger {
+  //   @apply bg-primary-dark
+  // }
+
+
+}
+
+// .ant-layout-sider .menu-container > .ant-menu-item {
+
+//             .ride-icon-empty{
+//               display:block;
+//             }
+//             .ride-icon-filled{
+//               display:none;
+//             }
+//             a.active{
+//                .ride-icon-empty{
+//               display:none;
+//             }
+//             .ride-icon-filled{
+//               display:block;
+//             }
+//             }
+// }
+
+
+// .ant-layout-sider .menu-container > .ant-menu-item-active {
+
+//             .ride-icon-empty{
+//               display:none;
+//             }
+//             .ride-icon-filled{
+//               display:block;
+//             }
+// }
+// .menu-container>.ant-menu-item:first-child.ant-menu-item {
+//   background-color: rgba(0, 0, 0, 0) ra!important;
+// }

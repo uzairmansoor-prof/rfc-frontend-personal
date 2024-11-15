@@ -1,0 +1,15 @@
+.checkbox-container {
+.ant-checkbox {
+    &:hover .ant-checkbox-inner, .ant-checkbox-inner {
+         @apply border-primary rounded-none #{!important};
+         
+     }
+ }
+ .ant-checkbox-checked {
+    .ant-checkbox-inner {
+         @apply  bg-primary  #{!important} ;
+         
+     }
+ }
+
+}

@@ -1,0 +1,9 @@
+export const ADDRESS_INPUT_DEFAULT_LENGTH = 255;
+export const CONTACT_DEFAULT_LENGTH = 15;
+export const GEO_FENCE_AREA_LENGTH = 60;
+export const GEO_FENCE_LONGITUDE_LENGTH = 7;
+export const GEO_FENCE_LATITUDE_LENGTH = 7;
+
+export const TEXT_INPUT_DEFAULT_LENGTH = 100;
+export const NAME_INPUT_DEFAULT_LENGTH = 50; //for name field
+export const DESC_INPUT_DEFAULT_LENGTH = 4096;

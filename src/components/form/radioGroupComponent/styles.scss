@@ -1,0 +1,36 @@
+.ant-radio-group {
+    @apply flex justify-start items-center flex-wrap my-4;
+
+    &>.ant-radio-wrapper {
+        align-items: center;
+
+
+        &>.ant-radio>.ant-radio-inner {
+            @apply border-black;
+        }
+
+        &>.ant-radio-disabled>.ant-radio-inner {
+            background-color: lightgray
+        }
+
+        &>.ant-radio-checked>.ant-radio-inner {
+            @apply bg-white border-black;
+
+            &::after {
+                // display: none;
+                @apply bg-secondary;
+                width: 32px;
+                height: 32px;
+                margin-block-start: -16px;
+                margin-inline-start: -16px;
+                background-color: blueviolet;
+            }
+        }
+
+        .ant-radio+span {
+            line-height: 0;
+            color: black;
+
+        }
+    }
+}

@@ -1,0 +1,10 @@
+node_modules
+.prettierrc
+.eslintrc.cjs
+tailwind.config.js
+runtime-env.js
+postcss.config.js
+README.md
+index.html
+tsconfig*
+package*

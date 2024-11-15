@@ -1,0 +1,65 @@
+// $login-form-backgroud-primay: #36393f;
+
+// .public-layout-main {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   flex-grow: 1;
+
+//   .main-container {
+//     display: flex;
+//     box-sizing: border-box;
+//     max-width: 480px;
+//     min-width: 320px;
+//     width: 100%;
+//     margin: 1rem;
+//     padding: 0rem 2rem;
+//     border-radius: 5px;
+//     background-color: $login-form-backgroud-primay;
+//   }
+// // }
+
+.ant-switch.ant-switch-checked,
+.ant-switch.ant-switch-checked:hover:not(.ant-switch-disabled) {
+  @apply bg-primary-dark;
+}
+a:active,
+a:hover {
+  @apply text-primary-dark;
+}
+
+.bg-wrapper-parent {
+  position: relative;
+  display: block;
+  padding: 70px 20px;
+  background: linear-gradient(to right, #ffffff 0%, #e6e0ec 50%, #978aa6 100%);
+}
+
+.bg-wrapper {
+  background: linear-gradient(180deg, #070C33 0%, #3B024D 27.1%, #821E8A 100%);
+  @apply absolute w-screen h-screen -translate-y-1/2 left-[40%] top-[50%] -z-10
+}
+.rtl .bg-wrapper {
+  @apply right-[40%] left-[auto];
+}
+
+
+// @media (max-width:1285px){
+  .public-layoutC-Wrapper{
+    justify-content: space-around!important;
+    .ant-form  {
+      .ant-form-item {
+        margin-bottom: 1.4rem;
+      
+      .ant-form-item-control-input-content > * {
+        &:first-child {
+          border-radius: 7px;
+          height: 2.8rem;
+          line-height: normal;
+        }
+         
+        }
+      }
+    }
+  }
+// }

@@ -1,0 +1,139 @@
+@import "assets/sass/styles";
+
+@font-face {
+  font-family: "Poppins-Regular";
+  src: local('Poppins-Regular'), url(assets/fonts/Poppins-Regular.ttf)  format("truetype");
+}
+
+
+:root {
+  font-family: Poppins-Regular, Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color: black;
+  background-color: white;
+ // font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+
+
+
+body {
+  margin: 0;
+  overflow: hidden;
+
+}
+
+/* Default LTR Layout */
+.ltr {
+ text-align: left;
+ direction: ltr;
+}
+
+/* RTL Layout for Arabic */
+.rtl {
+  text-align: right;
+  direction: rtl;
+}
+
+
+
+
+
+
+p {
+  font-size: 0.85rem;
+  margin: 0.25rem 0rem;
+  color: #b9bbbe;
+}
+
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border: 1px ridge;
+  border-radius: 10px;
+
+  background-color: rgba(196, 196, 196, 0.31);
+
+  &:hover {
+    background: rgba(196, 196, 196, 0.31);
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  /* Handle on hover */
+  background-color: rgba(119, 119, 119, 0.53);
+
+  &:hover {
+    // background: $primary-light-bg-color;
+  }
+}
+
+///tailwind
+/// 
+#root {
+  @apply flex h-screen w-screen;
+}
+
+.row-justify-align-center {
+  @apply flex justify-center items-center;
+}
+
+.col-justify-align-center {
+  @apply flex flex-col justify-center items-center;
+}
+
+.ant-form {
+  @extend .col-justify-align-center;
+  width: 100%;
+}
+
+// Remove top margins from headings
+
+// By default, `<h1>`-`<h6>` all receive top and bottom margins. We nuke the top
+// margin for easier control within type scales as it avoids margin collapsing.
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+// Reset margins on paragraphs
+//
+// Similarly, the top margin on `<p>`s get reset. However, we also reset the
+// bottom margin to use `rem` units instead of `em`.
+
+
+//main content 
+
+
+
+.Toastify__toast-container {
+  .Toastify__toast {
+    max-height: calc(100vh - 40px) !important;
+    overflow-y: auto;
+    font-family: Poppins-Regular, Inter, Avenir, Helvetica, Arial, sans-serif;
+  }
+  .Toastify__toast-icon + div{
+    font-family: Poppins-Regular, Inter, Avenir, Helvetica, Arial, sans-serif;  
+  }
+}
+
+

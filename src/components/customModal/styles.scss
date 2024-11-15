@@ -1,0 +1,10 @@
+.custom-modal {
+.ant-modal-header {
+    margin-bottom: 15px;
+} 
+.ant-modal-title {
+    text-align: center;
+    font-size: 1.2rem;
+    @apply text-primary #{!important}
+}
+}

@@ -1,0 +1,51 @@
+.custom {
+  &-primary {
+    @apply text-white border-primary bg-primary;
+
+    &:hover {
+      @apply text-primary bg-white #{!important};
+    }
+  }
+
+  &-primary-light {
+    @apply text-white border-[#5075A5] bg-[#5075A5];
+
+    &:hover {
+      @apply text-[#5075A5] bg-white #{!important};
+    }
+  }
+
+  &-secondary {
+    @apply text-primary bg-secondary-dark font-semibold;
+
+    &:hover {
+      @apply text-secondary  bg-primary #{!important};
+    }
+  }
+
+  
+
+  &-tertiary {
+
+    @apply bg-[#8E8E8E] text-white border-[#8E8E8E];
+
+    &:hover {
+      @apply bg-white text-[#8E8E8E] border-[#8E8E8E] #{!important};
+    }
+
+  }
+
+  // &-tertiary {
+  //   @apply text-primary-plan bg-white border-primary-light;
+
+  //   &:hover {
+  //     @apply text-primary-dark border-primary-dark #{!important};
+  //   }
+  // }
+}
+
+
+
+.ant-btn.ant-btn-sm{
+  border-radius: 7px;
+}

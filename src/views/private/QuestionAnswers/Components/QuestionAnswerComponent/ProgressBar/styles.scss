@@ -1,0 +1,45 @@
+.progressContainer{
+    height: 50px;
+    border: solid;
+    width: 10%;
+}
+// .ant-popover{
+//   background-color: red;
+// }
+
+.custom-popover .ant-popover-inner {
+  width: 300px;
+  height: 320px;
+  overflow: hidden;
+  background-color: #F4F8FD !important;
+  }
+  .ant-popover{ .ant-popover-inner{
+    padding: 5px;
+  }}
+  
+  .custom-popover .ant-popover-inner-content {
+    padding: 5px; /* Adjust padding if needed */
+    // background-color: transparent;
+  }
+  .contentContainer {
+  //   width: 300px; /* Set your desired width */
+  //   height: 200px; /* Set your desired height */
+  //   overflow-y: auto; /* Enables vertical scrolling */
+  //   overflow-x: hidden; /* Hides horizontal overflow */
+  //   padding: 8px; /* Optional padding */
+
+  //   overflow: hidden; /* Prevents any overflow */
+  // word-wrap: break-word; /* Breaks words and wraps them to the next line if they exceed the width */
+  // overflow-wrap: break-word;
+
+
+  width: 280px;
+    height: 295px;
+    // overflow-y: auto;
+    // overflow-x: hidden;
+    padding: 4px;
+    overflow: hidden;
+    word-wrap: break-word;
+    overflow-y: auto;
+    // overflow-wrap: break-word;
+  }

@@ -1,0 +1,15 @@
+.ant-switch.ant-switch-checked,
+.ant-switch.ant-switch-checked:hover:not(.ant-switch-disabled) {
+  @apply bg-primary-dark;
+}
+.custom-popupconfirm {
+
+  .anticon-exclamation-circle {
+    margin-inline-end: 0px !important;
+  }
+
+  .ant-popconfirm-message {
+    column-gap: 8px;
+  }
+
+}

@@ -1,0 +1,33 @@
+.custom-popover-text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.0625rem;
+  text-decoration-line: underline;
+  color: #0a2595;
+}
+
+.popover-list {
+  background-color: #a5cbee;
+  max-width: 300px !important;
+  border-radius: 0.75rem;
+  margin: 0.25rem 0rem 0.25rem 0rem;
+  padding: 0.25rem 1rem 0.25rem 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ant-popover-inner-content {
+  overflow-y: auto;
+  max-height: 25.5rem;
+  padding: 0.9rem 0.9rem 0rem 0.9rem;
+  &::-webkit-scrollbar {
+    width: 0.7rem !important;
+  }
+}
+
+.ant-popover-inner {
+  padding-bottom: 0.9rem;
+}

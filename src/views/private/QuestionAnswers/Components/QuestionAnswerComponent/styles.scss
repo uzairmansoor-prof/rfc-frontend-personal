@@ -1,0 +1,10 @@
+.assign-edit-icon-container {
+
+    svg {
+        @apply text-white;
+         &:hover{
+            @apply text-primary #{!important}
+         }
+        
+    }
+}

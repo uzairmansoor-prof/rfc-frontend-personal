@@ -1,0 +1,13 @@
+@import "variables";
+// src/styles/tailwind.scss
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  * {
+    @apply box-border;
+    font-family: Poppins-Regular, Inter, Avenir, Helvetica, Arial, sans-serif;
+
+  }
+}

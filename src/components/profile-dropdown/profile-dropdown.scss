@@ -1,0 +1,29 @@
+.profile-notification {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile-dropdown {
+  display: flex;
+  align-items: center;
+  max-width: 300px;
+  cursor: pointer;
+
+  &-image {
+    border-radius: 50%;
+    height: 2.5rem !important;
+    width: 2.5rem !important;
+  }
+
+  &-info {
+    margin-left: 0.5rem;
+    // max-width: calc(100% - 45px - 0.5rem);
+
+    // &-name {
+    //   font-weight: 600;
+    //   font-size: 0.85rem;
+    // }
+
+  }
+}

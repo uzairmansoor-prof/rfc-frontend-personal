@@ -1,0 +1,91 @@
+// .ant-select-multiple {
+//   .ant-select-selection-item-remove svg {
+//     // color: $primary-bg-color-dark-2;
+//     display: inline-block;
+//   }
+
+//   .ant-select-selector {
+//     .ant-select-selection-search {
+//       left: -1px !important;
+//       margin-top: 4px !important;
+//       margin-bottom: 0px !important;
+//     }
+
+//     .ant-select-selection-overflow {
+//       position: relative;
+//       bottom: 2px;
+//       // margin-left: 11px;
+
+//       .ant-select-selection-overflow-item {
+//         .ant-select-selection-item {
+//           // background-color: $primary-bg-color-light-8;
+//           // color: $primary-bg-color-dark-2 !important;
+//           // border: 1.5px solid $primary-bg-color-dark-2;
+//           right: 0;
+//           left: 0;
+//           border-radius: 12px;
+//           margin-top: 4px;
+//         }
+//       }
+
+//       .ant-select-selection-overflow-item-suffix {
+//         top: auto !important;
+//       }
+//     }
+
+//     .ant-select-selection-placeholder {
+//       left: 11px;
+//     }
+//   }
+// }
+
+.ant-select-clear {
+  background-color: transparent !important;
+  color: thistle !important;
+}
+
+.ant-select.custom-select {
+  height: 40px !important;
+  .ant-select-selector {
+    box-shadow: none !important;
+    height: 40px !important;
+    font-size: .8rem;
+    @apply border-border #{!important};
+
+    &> :is(.ant-select-selection-placeholder, .ant-select-selection-search, .ant-select-selection-item) {
+      @apply leading-[38px] flex items-center;
+    }
+  }
+  &.ant-select-disabled {
+    .ant-select-selection-item {
+      color: gray;
+    }
+  }
+}
+
+.ant-select-dropdown-empty {
+  .ant-select-item-empty {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    padding-inline-start: 10px;
+  }
+}
+
+.custom-select > .ant-select-selector {
+  border-color: #e2bff3!important; /* Default border color */
+}
+
+.custom-select > .ant-select-selector:hover, 
+.custom-select > .ant-select-selector:focus, 
+.custom-select > .ant-select-selector:focus-within {
+  @apply border-primary-plan #{!important};
+
+}
+.custom-select.ant-select-status-error > .ant-select-selector{
+  border-color: #ff4d4f !important; /* Default border color */
+
+}
+.ant-select.custom-select .ant-select-selector{
+  border-radius: 5px;
+}

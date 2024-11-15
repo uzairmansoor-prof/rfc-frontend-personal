@@ -1,0 +1,164 @@
+.questions-answers-container {
+  .ant-btn {
+    height: 30px;
+    font-size: 12px;
+  }
+  .sheet-qa-container {
+    background-color: white;
+    border: none;
+    height: 700px;
+
+    // &>.ant-collapse-item {
+    //     border-bottom: 0px;
+
+    //     // .ant-collapse-header {
+    //     //     position: relative;
+    //     //     align-items: center;
+    //     //     padding-inline: 0px;
+
+    //     //     // .ant-collapse-header-text {
+    //     //     //     &::after {
+    //     //     //         left: 50px;
+    //     //     //         position: absolute;
+    //     //     //         background-color: rgb(232, 232, 232);
+    //     //     //         content: "";
+    //     //     //         width: calc(100% - 240px);
+    //     //     //         height: 1px;
+    //     //     //         transform: translateY(-16px);
+
+    //     //     //     }
+
+    //     //     // }
+
+    //     // }
+    //     &:not(:last-child) {
+    //         .ant-collapse-header {
+    //             .ant-collapse-expand-icon {
+    //                 &::after {
+    //                     position: absolute;
+    //                     background-color: rgb(232, 232, 232);
+    //                     content: "";
+    //                     height: calc(100% - 15px);
+    //                     width: 1px;
+    //                     top: 35px;
+    //                     left: 5.5px;
+
+    //                 }
+    //             }            }
+    //     }
+
+    //     .ant-collapse-content {
+    //         border-top: 0px;
+    //         position: relative;
+
+    //         .ant-collapse-content-box {
+    //             padding-top: 0px;
+
+    //             &::before {
+    //                 position: absolute;
+    //                 background-color: rgb(232, 232, 232);
+    //                 content: "";
+    //                 height: calc(100% + 21px);
+    //                 width: 1px;
+    //                 top: -1px;
+    //                 left: 5.5px;
+
+    //             }
+    //         }
+    //     }
+
+    // }
+
+    // &>.ant-collapse-item-active {
+    .question-answer-promp-component {
+      border: 1px solid #a7c3e8;
+      box-shadow: 0px 4px 8px 0px #0a3a6414;
+      border-radius: 10px;
+      background-color: white;
+      padding: 0.5px;
+
+      .ant-checkbox-wrapper {
+        @apply text-primary font-semibold;
+        font-size: 0.77rem;
+      }
+
+      .header {
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+        padding: 0.5rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.8rem;
+        @apply bg-secondary-light text-primary font-semibold;
+
+        svg {
+          height: 23px;
+        }
+      }
+
+      .ant-form {
+        // background-color: red;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        padding: 1rem;
+        padding-top: 1.5rem;
+
+        border-bottom-left-radius: inherit;
+        border-bottom-right-radius: inherit;
+
+        .ant-form-item {
+          margin-bottom: 0px;
+
+          textarea,
+          input {
+            border-radius: 6px;
+          }
+        }
+      }
+    }
+
+    // }
+  }
+
+  .ListItemEven,
+  .ListItemOdd {
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+  }
+
+  .ListItemEven {
+    background-color: #f8f8f0;
+  }
+
+  
+  .sheet-name-wrapper {
+    display: grid;
+    row-gap: 15px;
+
+    h4 {
+      position: relative;
+
+      &:not(:last-child):before {
+        //  left: 198px;
+        position: absolute;
+        background-color: rgb(232, 232, 232);
+        content: "";
+        height: 35px;
+        width: 1px;
+        top: 17px;
+        left: 6.5px;
+      }
+    }
+  }
+}
+.ant-progress-line {
+    margin-bottom: 2px !important;
+    //width: 150px;
+    margin-inline-end: 0px !important;
+    .ant-progress-text {
+      font-size: .75rem;
+    }
+  }

@@ -1,0 +1,10 @@
+.driver-approval-form-card{
+    box-shadow: 0px 0px 55px 0px rgba(0, 0, 0, 0.1);
+    .ant-select.custom-select .ant-select-selector > :is(.ant-select-selection-placeholder, .ant-select-selection-search, .ant-select-selection-item){
+        line-height: normal;
+    }
+    
+}
+.driver-card-form-icon{
+    max-height:20px;
+}

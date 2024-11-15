@@ -1,0 +1,47 @@
+
+.ant-form-item  {
+  margin-bottom: 1rem;
+  &> .ant-form-item-row {
+  position: relative;
+
+  & > .ant-form-item-label,
+  &:hover > .ant-form-item-label {
+    padding: 0px !important;
+    z-index: 1000;
+    position: absolute;
+    background-color: white;
+    position: absolute;
+    top: -12px;
+    left: 7px;
+   // text-align: left;
+    font-weight: 600;
+    padding-bottom: 0px;
+   & > label {
+    height: auto;
+    line-height: normal;
+    font-size: .8rem;
+   }
+    // margin-bottom: 3px !important;
+    & > label::after {
+      visibility: visible;
+      content: "";
+      margin-right: 1px;
+      //display: none;
+    }
+  }
+
+  .ant-form-item-control  input {
+    line-height: 3
+  }
+}
+}
+
+.form-item-error-wrapper > .ant-form-item-row {
+  & > .ant-form-item-label > label {
+    @apply text-error;
+  }
+
+  .ant-input-affix-wrapper-status-error {
+    @apply border-error #{!important};
+  }
+}

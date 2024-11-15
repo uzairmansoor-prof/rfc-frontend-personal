@@ -1,0 +1,25 @@
+.search-component-container {
+  .search-container {
+    // box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1) inset;
+
+    border-radius: 5px;
+    overflow: hidden;
+    min-width: 200px;
+    @apply max-w-sm ;
+    .ant-input-clear-icon {
+      @apply absolute right-[20px];
+    }
+    .ant-input {
+      padding: 6px 0px;
+      line-height: normal !important;
+
+    }
+    & > .ant-input-wrapper.ant-input-group {
+      & > .ant-input-affix-wrapper {
+        font-size: 13px;
+        @apply border-primary-light;
+      }
+
+    }
+  }
+}
