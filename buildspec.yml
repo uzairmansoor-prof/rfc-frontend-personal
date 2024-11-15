@@ -1,0 +1,32 @@
+version: 0.2
+ 
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18  # Update to Node.js 18 to match the required version
+    commands:
+      - echo "Installing dependencies..."
+      # - npm install -g @angular/cli  # Install Angular CLI
+      - npm -v
+      - node -v
+  pre_build:
+    commands:
+      - npm install  # Install all npm dependencies for the Angular project
+  build:
+    commands:
+      - echo "Building the Angular application..."
+      - npm run build
+      # - ng build  --configuration $ENV # Build the Angular app in development mode
+  post_build:
+    commands:
+      - echo "Build complete. Preparing to upload to S3..."
+      - ls -la
+      - aws s3 sync dist/rfc-fe/ s3://$S3_BUCKET_NAME --delete  # Sync the contents of dist/ with the S3 bucket
+artifacts:
+  files:
+    - '**/*'  # Collect the built application from the dist folder
+  base-directory: dist/rfc-fe  # The base directory for the output artifact (adjust if needed)
+ 
+cache:
+  paths:
+    - node_modules/**  # Cache node_modules to speed up future builds
