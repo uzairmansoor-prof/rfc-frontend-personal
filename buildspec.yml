@@ -21,12 +21,13 @@ phases:
     commands:
       - echo "Build complete. Preparing to upload to S3..."
       - ls -la
-      - aws s3 sync . s3://testbucketappreact-uzair --delete  # Sync the contents of dist/ with the S3 bucket
-artifacts:
-  files:
-    - '**/*'  # Collect the built application from the dist folder
-  base-directory: dist/rfc-fe  # The base directory for the output artifact (adjust if needed)
+      - ls dist/ -la
+#       - aws s3 sync dist/ s3://testbucketappreact-uzair --delete  # Sync the contents of dist/ with the S3 bucket
+# artifacts:
+#   files:
+#     - '**/*'  # Collect the built application from the dist folder
+#   base-directory: dist/rfc-fe  # The base directory for the output artifact (adjust if needed)
  
-cache:
-  paths:
-    - node_modules/**  # Cache node_modules to speed up future builds
+# cache:
+#   paths:
+#     - node_modules/**  # Cache node_modules to speed up future builds
