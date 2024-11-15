@@ -21,7 +21,7 @@ phases:
     commands:
       - echo "Build complete. Preparing to upload to S3..."
       - ls -la
-      - aws s3 sync dist/rfc-fe/ s3://testbucketappreact-uzair --delete  # Sync the contents of dist/ with the S3 bucket
+      - aws s3 sync . s3://testbucketappreact-uzair --delete  # Sync the contents of dist/ with the S3 bucket
 artifacts:
   files:
     - '**/*'  # Collect the built application from the dist folder
