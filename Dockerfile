@@ -8,6 +8,10 @@ COPY public/ /app/public
 COPY src/ /app/src
 COPY package.json /app/
 
+ENV VITE_API_BASE_PATH=http://test-loadbalancer-2071423490.us-east-1.elb.amazonaws.com
+ENV VITE_PROMPT_API_BASE_PATH=http://test-loadbalancer-2071423490.us-east-1.elb.amazonaws.com/api/
+ENV VITE_SOCKET_BASE_PATH=/
+
 # Install Node Package
 RUN npm install --legacy-peer-deps
 
