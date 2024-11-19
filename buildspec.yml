@@ -15,14 +15,15 @@ phases:
   build:
     commands:
       - echo "Building the Angular application..."
-      - npm run devbuild
+      # - npm run devbuild
+      - export $(cat .dev.env | xargs) && npm run devbuild
       # - ng build  --configuration $ENV # Build the Angular app in development mode
   post_build:
     commands:
       - echo "Build complete. Preparing to upload to S3..."
       - ls -la
       - ls dist/ -la
-      - aws s3 sync dist/ s3://testbucketappreact-uzair --delete  # Sync the contents of dist/ with the S3 bucket
+      - aws s3 sync dist/ s3://rfp-s3-frontend-us-east-1-414432075221 --delete  # Sync the contents of dist/ with the S3 bucket
 artifacts:
   files:
     - '**/*'  # Collect the built application from the dist folder
