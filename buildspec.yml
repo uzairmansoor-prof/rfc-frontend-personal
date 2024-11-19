@@ -21,8 +21,8 @@ phases:
   build:
     commands:
       - echo "Building the Angular application..."
-      # - npm run devbuild
-      - export $(cat .dev.env | xargs) && npm run devbuild
+      - npm run devbuild
+      # - export $(cat .dev.env | xargs) && npm run devbuild
       # - ng build  --configuration $ENV # Build the Angular app in development mode
   post_build:
     commands:
