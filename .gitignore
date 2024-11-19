@@ -26,10 +26,10 @@ runtime-env.js
 *.njsproj
 *.sln
 *.sw?
-.env.*
+# .env.*
 
 deploy.sh
 ubuntu-test*
 
 runtime-env.js
-.env.dev
+# .env.dev
