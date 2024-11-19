@@ -113,6 +113,7 @@ const QuestionAnswerModalComponent = ({
         {
           headers: {
             "Content-Type": "application/json", // Specify content type
+            "Access-Control-Allow-Origin": "*"
           },
         },
       )
