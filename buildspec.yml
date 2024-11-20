@@ -1,10 +1,10 @@
 version: 0.2
 
-env:
-  variables:
-    VITE_API_BASE_PATH: "http://test-loadbalancer-2071423490.us-east-1.elb.amazonaws.com"
-    VITE_PROMPT_API_BASE_PATH: "http://test-loadbalancer-2071423490.us-east-1.elb.amazonaws.com/api/"
-    VITE_SOCKET_BASE_PATH: "/"
+# env:
+#   variables:
+#     VITE_API_BASE_PATH: "http://test-loadbalancer-2071423490.us-east-1.elb.amazonaws.com"
+#     VITE_PROMPT_API_BASE_PATH: "http://test-loadbalancer-2071423490.us-east-1.elb.amazonaws.com/api/"
+#     VITE_SOCKET_BASE_PATH: "/"
 
 phases:
   install:
@@ -15,6 +15,9 @@ phases:
       # - npm install -g @angular/cli  # Install Angular CLI
       - npm -v
       - node -v
+      - echo "VITE_API_BASE_PATH: $VITE_API_BASE_PATH"
+      - echo "VITE_PROMPT_API_BASE_PATH: $VITE_PROMPT_API_BASE_PATH"
+      - echo "VITE_SOCKET_BASE_PATH: $VITE_SOCKET_BASE_PATH"
   pre_build:
     commands:
       - npm install  # Install all npm dependencies for the Angular project
