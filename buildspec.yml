@@ -12,15 +12,15 @@ phases:
       nodejs: 18  # Update to Node.js 18 to match the required version
     commands:
       - echo "Installing dependencies..."
-      # - npm install -g @angular/cli  # Install Angular CLI
       - npm -v
       - node -v
       - echo "VITE_API_BASE_PATH: $VITE_API_BASE_PATH"
       - echo "VITE_PROMPT_API_BASE_PATH: $VITE_PROMPT_API_BASE_PATH"
       - echo "VITE_SOCKET_BASE_PATH: $VITE_SOCKET_BASE_PATH"
-      - sed -i 's|VITE_API_BASE_PATH=$VITE_API_BASE_PATH' .env.dev
-      - sed -i 's|VITE_PROMPT_API_BASE_PATH=$VITE_PROMPT_API_BASE_PATH' .env.dev
-      - sed -i 's|VITE_SOCKET_BASE_PATH=$VITE_SOCKET_BASE_PATH' .env.dev
+      # Replace the values in the .env.dev file with the environment variables
+      - sed -i "s|VITE_API_BASE_PATH=.*|VITE_API_BASE_PATH=$VITE_API_BASE_PATH|" .env.dev
+      - sed -i "s|VITE_PROMPT_API_BASE_PATH=.*|VITE_PROMPT_API_BASE_PATH=$VITE_PROMPT_API_BASE_PATH|" .env.dev
+      - sed -i "s|VITE_SOCKET_BASE_PATH=.*|VITE_SOCKET_BASE_PATH=$VITE_SOCKET_BASE_PATH|" .env.dev
   pre_build:
     commands:
       - npm install  # Install all npm dependencies for the Angular project
