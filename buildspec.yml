@@ -61,9 +61,9 @@ phases:
       # - echo "VITE_PROMPT_API_BASE_PATH: $VITE_PROMPT_API_BASE_PATH"
       # - echo "VITE_SOCKET_BASE_PATH: $VITE_SOCKET_BASE_PATH"
       # Replace the values in the .env.dev file with the environment variables
-      - sed -i "s|VITE_API_BASE_PATH=.*|VITE_API_BASE_PATH=$VITE_API_BASE_PATH|" .env.dev
-      - sed -i "s|VITE_PROMPT_API_BASE_PATH=.*|VITE_PROMPT_API_BASE_PATH=$VITE_PROMPT_API_BASE_PATH|" .env.dev
-      - sed -i "s|VITE_SOCKET_BASE_PATH=.*|VITE_SOCKET_BASE_PATH=$VITE_SOCKET_BASE_PATH|" .env.dev
+      # - sed -i "s|VITE_API_BASE_PATH=.*|VITE_API_BASE_PATH=$VITE_API_BASE_PATH|" .env.dev
+      # - sed -i "s|VITE_PROMPT_API_BASE_PATH=.*|VITE_PROMPT_API_BASE_PATH=$VITE_PROMPT_API_BASE_PATH|" .env.dev
+      # - sed -i "s|VITE_SOCKET_BASE_PATH=.*|VITE_SOCKET_BASE_PATH=$VITE_SOCKET_BASE_PATH|" .env.dev
 
   pre_build:
     commands:
