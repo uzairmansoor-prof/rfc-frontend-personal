@@ -48,11 +48,11 @@
 
 version: 0.2
 
-env:
-  variables:
-    VITE_API_BASE_PATH: "http://test-loadbalancer-2071423490.us-east-1.elb.amazonaws.com"
-    VITE_PROMPT_API_BASE_PATH: "http://test-loadbalancer-2071423490.us-east-1.elb.amazonaws.com/api/"
-    VITE_SOCKET_BASE_PATH: "/"
+# env:
+#   variables:
+#     VITE_API_BASE_PATH: "http://test-loadbalancer-2071423490.us-east-1.elb.amazonaws.com"
+#     VITE_PROMPT_API_BASE_PATH: "http://test-loadbalancer-2071423490.us-east-1.elb.amazonaws.com/api/"
+#     VITE_SOCKET_BASE_PATH: "/"
 
 phases:
   install:
@@ -63,9 +63,9 @@ phases:
       - npm -v
       - node -v
       - printenv
-      - echo "VITE_API_BASE_PATH: $VITE_API_BASE_PATH"
-      - echo "VITE_PROMPT_API_BASE_PATH: $VITE_PROMPT_API_BASE_PATH"
-      - echo "VITE_SOCKET_BASE_PATH: $VITE_SOCKET_BASE_PATH"
+      # - echo "VITE_API_BASE_PATH: $VITE_API_BASE_PATH"
+      # - echo "VITE_PROMPT_API_BASE_PATH: $VITE_PROMPT_API_BASE_PATH"
+      # - echo "VITE_SOCKET_BASE_PATH: $VITE_SOCKET_BASE_PATH"
       # Replace the values in the .env.dev file with the environment variables
       # - sed -i "s|VITE_API_BASE_PATH=.*|VITE_API_BASE_PATH=$VITE_API_BASE_PATH|" .env.dev
       # - sed -i "s|VITE_PROMPT_API_BASE_PATH=.*|VITE_PROMPT_API_BASE_PATH=$VITE_PROMPT_API_BASE_PATH|" .env.dev
