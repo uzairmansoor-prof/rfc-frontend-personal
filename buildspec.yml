@@ -12,30 +12,13 @@ phases:
       nodejs: 18
     commands:
       - echo "Installing dependencies..."
-      - npm -v
-      - node -v
-      - cat .env.dev
-      # - export VITE_API_BASE_PATH=$(aws ssm get-parameter --name "/rfp/dev/VITE_API_BASE_PATH" --with-decryption --query "Parameter.Value" --output text)
+      - npm -v && node -v
 
-      
-      # - export VITE_API_BASE_PATH=$(aws ssm get-parameter --name "/rfp/dev/VITE_API_BASE_PATH" --with-decryption --query "Parameter.Value" --output text)
-      # - export VITE_PROMPT_API_BASE_PATH=$(aws ssm get-parameter --name "/rfp/dev/VITE_PROMPT_API_BASE_PATH" --with-decryption --query "Parameter.Value" --output text)
-      # - export VITE_SOCKET_BASE_PATH=$(aws ssm get-parameter --name "/rfp/dev/VITE_SOCKET_BASE_PATH" --with-decryption --query "Parameter.Value" --output text)
-
-      # Verifying the values are set correctly
-      - echo $VITE_API_BASE_PATH
-      - echo $VITE_PROMPT_API_BASE_PATH
-      - echo $VITE_SOCKET_BASE_PATH
-
-      # - sed -i "s|VITE_API_BASE_PATH=.*|VITE_API_BASE_PATH=$(aws ssm get-parameter --name '/rfp/dev/VITE_API_BASE_PATH' --query 'Parameter.Value' --output text)|" .env.dev
-      # - sed -i "s|VITE_PROMPT_API_BASE_PATH=.*|VITE_PROMPT_API_BASE_PATH=$(aws ssm get-parameter --name '/rfp/dev/VITE_PROMPT_API_BASE_PATH' --query 'Parameter.Value' --output text)|" .env.dev
-      # - sed -i "s|VITE_SOCKET_BASE_PATH=.*|VITE_SOCKET_BASE_PATH=$(aws ssm get-parameter --name '/rfp/dev/VITE_SOCKET_BASE_PATH' --query 'Parameter.Value' --output text)|" .env.dev
-
+      - echo "Replacing the contents of the .env.dev file with actual values..."
       - sed -i "s|VITE_API_BASE_PATH=.*|VITE_API_BASE_PATH=$VITE_API_BASE_PATH|" .env.dev
       - sed -i "s|VITE_PROMPT_API_BASE_PATH=.*|VITE_PROMPT_API_BASE_PATH=$VITE_PROMPT_API_BASE_PATH|" .env.dev
       - sed -i "s|VITE_SOCKET_BASE_PATH=.*|VITE_SOCKET_BASE_PATH=$VITE_SOCKET_BASE_PATH|" .env.dev
 
-      - cat .env.dev
   pre_build:
     commands:
       - npm install
