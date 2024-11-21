@@ -3,8 +3,8 @@ version: 0.2
 env:
   parameter-store:
     VITE_API_BASE_PATH: "/rfp/dev/VITE_API_BASE_PATH"
-    # VITE_PROMPT_API_BASE_PATH: "http://your-api-url/api"
-    # VITE_SOCKET_BASE_PATH: "/"
+    VITE_PROMPT_API_BASE_PATH: "/rfp/dev/VITE_PROMPT_API_BASE_PATH"
+    VITE_SOCKET_BASE_PATH: "/"
 
 phases:
   install:
@@ -21,6 +21,8 @@ phases:
 
       # Verifying the values are set correctly
       - echo $VITE_API_BASE_PATH
+      - echo $VITE_PROMPT_API_BASE_PATH
+      - echo $VITE_SOCKET_BASE_PATH
       # - echo "$VITE_API_BASE_PATH"
       # - echo "$VITE_PROMPT_API_BASE_PATH"
       # - echo "$VITE_SOCKET_BASE_PATH"
