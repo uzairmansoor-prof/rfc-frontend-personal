@@ -20,7 +20,7 @@ phases:
       # - export VITE_SOCKET_BASE_PATH=$(aws ssm get-parameter --name "/rfp/dev/VITE_SOCKET_BASE_PATH" --with-decryption --query "Parameter.Value" --output text)
 
       # Verifying the values are set correctly
-      - echo "Decrypted variable: $VITE_API_BASE_PATH"
+      - echo $VITE_API_BASE_PATH
       # - echo "$VITE_API_BASE_PATH"
       # - echo "$VITE_PROMPT_API_BASE_PATH"
       # - echo "$VITE_SOCKET_BASE_PATH"
