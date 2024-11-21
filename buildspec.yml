@@ -14,7 +14,7 @@ phases:
       - echo "Installing dependencies..."
       - npm -v
       - node -v
-      
+      - cat .env.dev
       # - export VITE_API_BASE_PATH=$(aws ssm get-parameter --name "/rfp/dev/VITE_API_BASE_PATH" --with-decryption --query "Parameter.Value" --output text)
 
       
