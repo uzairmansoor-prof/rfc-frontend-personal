@@ -20,9 +20,9 @@ phases:
       - export VITE_SOCKET_BASE_PATH=$(aws ssm get-parameter --name "/rfp/dev/VITE_SOCKET_BASE_PATH" --with-decryption --query "Parameter.Value" --output text)
 
       # Verifying the values are set correctly
-      # - echo $VITE_API_BASE_PATH
-      # - echo $VITE_PROMPT_API_BASE_PATH
-      # - echo $VITE_SOCKET_BASE_PATH
+      - echo $VITE_API_BASE_PATH
+      - echo $VITE_PROMPT_API_BASE_PATH
+      - echo $VITE_SOCKET_BASE_PATH
 
       # - sed -i "s|VITE_API_BASE_PATH=.*|VITE_API_BASE_PATH=$(aws ssm get-parameter --name '/rfp/dev/VITE_API_BASE_PATH' --query 'Parameter.Value' --output text)|" .env.dev
       # - sed -i "s|VITE_PROMPT_API_BASE_PATH=.*|VITE_PROMPT_API_BASE_PATH=$(aws ssm get-parameter --name '/rfp/dev/VITE_PROMPT_API_BASE_PATH' --query 'Parameter.Value' --output text)|" .env.dev
@@ -32,28 +32,29 @@ phases:
       - sed -i "s|VITE_PROMPT_API_BASE_PATH=.*|VITE_PROMPT_API_BASE_PATH=$VITE_PROMPT_API_BASE_PATH|" .env.dev
       - sed -i "s|VITE_SOCKET_BASE_PATH=.*|VITE_SOCKET_BASE_PATH=$VITE_SOCKET_BASE_PATH|" .env.dev
 
+      - - cat .env.dev
   pre_build:
     commands:
       - npm install
 
-  build:
-    commands:
-      - echo "Building the Angular application..."
-      - export $(cat .env.dev | xargs) && npm run devbuild
+#   build:
+#     commands:
+#       - echo "Building the Angular application..."
+#       - export $(cat .env.dev | xargs) && npm run devbuild
 
-  post_build:
-    commands:
-      - echo "Build complete. Preparing to upload to S3..."
-      - ls -la
-      - cat .env.dev
-      - ls dist/ -la
-      - aws s3 sync dist/ s3://rfp-s3-frontend-us-east-1-414432075221 --delete
+#   post_build:
+#     commands:
+#       - echo "Build complete. Preparing to upload to S3..."
+#       - ls -la
+#       - cat .env.dev
+#       - ls dist/ -la
+#       - aws s3 sync dist/ s3://rfp-s3-frontend-us-east-1-414432075221 --delete
 
-artifacts:
-  files:
-    - '**/*'
-  base-directory: dist/
+# artifacts:
+#   files:
+#     - '**/*'
+#   base-directory: dist/
 
-cache:
-  paths:
-    - node_modules/**
+# cache:
+#   paths:
+#     - node_modules/**
