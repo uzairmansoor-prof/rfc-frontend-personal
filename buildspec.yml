@@ -15,7 +15,7 @@ phases:
       - npm -v && node -v
       - |
         aws ssm get-parameters-by-path \
-            --path "rfp/dev/FE" \
+            --path "/rfp/dev/FE" \
             --recursive \
             --with-decryption \
             --query "Parameters[].[Name,Value]" \
@@ -24,7 +24,7 @@ phases:
             echo "${key}=${value}" >> .env
         done
       - echo "Environment variables written to .env file:"
-      - cat .env.production.local
+      - cat .env
  
       # - echo "Replacing the contents of the .env.dev file with actual values..."
       # - sed -i "s|VITE_API_BASE_PATH=.*|VITE_API_BASE_PATH=$VITE_API_BASE_PATH|" .env.dev
