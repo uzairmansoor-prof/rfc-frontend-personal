@@ -1,34 +1,94 @@
+# version: 0.2
+ 
+# phases:
+#   install:
+#     runtime-versions:
+#       nodejs: 18  # Update to Node.js 18 to match the required version
+#     commands:
+#       - echo "Installing dependencies..."
+#       # - npm install -g @angular/cli  # Install Angular CLI
+#       - npm -v
+#       - node -v
+#   pre_build:
+#     commands:
+#       - npm install  # Install all npm dependencies for the Angular project
+#   build:
+#     commands:
+#       - echo "Building the Angular application..."
+#       # - npm run devbuild
+#       - export $(cat .dev.env | xargs) && npm run devbuild
+#       # - ng build  --configuration $ENV # Build the Angular app in development mode
+#   post_build:
+#     commands:
+#       - echo "Build complete. Preparing to upload to S3..."
+#       - ls -la
+#       - ls dist/ -la
+#       - aws s3 sync dist/ s3://rfp-s3-frontend-us-east-1-414432075221 --delete  # Sync the contents of dist/ with the S3 bucket
+# artifacts:
+#   files:
+#     - '**/*'  # Collect the built application from the dist folder
+#   base-directory: dist/  # The base directory for the output artifact (adjust if needed)
+ 
+# cache:
+
+
+
 version: 0.2
+ 
+# env:
+#   parameter-store:
+#     VITE_API_BASE_PATH: "/rfp/dev/VITE_API_BASE_PATH"
+#     VITE_PROMPT_API_BASE_PATH: "/rfp/dev/VITE_PROMPT_API_BASE_PATH"
+#     VITE_SOCKET_BASE_PATH: "/rfp/dev/VITE_SOCKET_BASE_PATH"
  
 phases:
   install:
     runtime-versions:
-      nodejs: 18  # Update to Node.js 18 to match the required version
+      nodejs: 18
     commands:
       - echo "Installing dependencies..."
-      # - npm install -g @angular/cli  # Install Angular CLI
-      - npm -v
-      - node -v
+      - npm -v && node -v
+      - |
+        aws ssm get-parameters-by-path \
+            --path "rfp/dev/FE" \
+            --recursive \
+            --with-decryption \
+            --query "Parameters[].[Name,Value]" \
+            --output text | while read name value; do
+            key=$(basename "$name")
+            echo "${key}=${value}" >> .env
+        done
+      - echo "Environment variables written to .env file:"
+      - cat .env.production.local
+ 
+      # - echo "Replacing the contents of the .env.dev file with actual values..."
+      # - sed -i "s|VITE_API_BASE_PATH=.*|VITE_API_BASE_PATH=$VITE_API_BASE_PATH|" .env.dev
+      # - sed -i "s|VITE_PROMPT_API_BASE_PATH=.*|VITE_PROMPT_API_BASE_PATH=$VITE_PROMPT_API_BASE_PATH|" .env.dev
+      # - sed -i "s|VITE_SOCKET_BASE_PATH=.*|VITE_SOCKET_BASE_PATH=$VITE_SOCKET_BASE_PATH|" .env.dev
+ 
   pre_build:
     commands:
-      - npm install  # Install all npm dependencies for the Angular project
+      - npm install
+ 
   build:
     commands:
       - echo "Building the Angular application..."
-      # - npm run devbuild
-      - export $(cat .dev.env | xargs) && npm run devbuild
-      # - ng build  --configuration $ENV # Build the Angular app in development mode
+      - export $(cat .env | xargs) && npm run devbuild
+ 
   post_build:
     commands:
       - echo "Build complete. Preparing to upload to S3..."
       - ls -la
       - ls dist/ -la
-      - aws s3 sync dist/ s3://rfp-s3-frontend-us-east-1-414432075221 --delete  # Sync the contents of dist/ with the S3 bucket
+      - aws s3 sync dist/ s3://rfp-dev-app-frontend-us-east-1-414432075221 --delete
+ 
 artifacts:
   files:
-    - '**/*'  # Collect the built application from the dist folder
-  base-directory: dist/  # The base directory for the output artifact (adjust if needed)
+    - '**/*'
+  base-directory: dist/
  
 cache:
   paths:
-    - node_modules/**  # Cache node_modules to speed up future builds
+    - node_modules/**
+#   paths:
+#     - node_modules/**  # Cache node_modules to speed up future builds
