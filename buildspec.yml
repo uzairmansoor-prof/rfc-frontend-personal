@@ -9,7 +9,7 @@ phases:
       - echo "TypeScript Version: $(tsc --version)"
       - npm install -g typescript@latest
       - npm install
-      - npm -v 
+      - npm -v
       - node -v
       - |
         aws ssm get-parameters-by-path \
@@ -23,7 +23,6 @@ phases:
         done
       - echo "Environment variables written to .env file:"
       - cat .env
- 
 
   pre_build:
     commands:
@@ -31,24 +30,23 @@ phases:
       - test -s .env || (echo "Missing .env file or empty"; exit 1)
       - npm install
 
- 
   build:
     commands:
       - echo "Building the Angular application..."
       - export $(cat .env | xargs) && npm run devbuild
- 
+
   post_build:
     commands:
       - echo "Build complete. Preparing to upload to S3..."
       - ls -la
       - ls dist/ -la
       - aws s3 sync dist/ s3://rfp-dev-app-frontend-us-east-1-414432075221 --delete
- 
+
 artifacts:
   files:
     - '**/*'
   base-directory: dist/
- 
+
 cache:
   paths:
     - node_modules/**
