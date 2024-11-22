@@ -9,7 +9,12 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 18
+      nodejs: 18  # Ensure using Node.js 18 or above
+    commands:
+      - echo "Installing dependencies..."
+      - npm install -g typescript@latest  # Install the latest TypeScript version
+      - npm install
+      - npm -v && node -v && tsc --version  #
     commands:
       - echo "Installing dependencies..."
       - npm -v && node -v
