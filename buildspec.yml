@@ -5,6 +5,10 @@ phases:
       nodejs: 18
     commands:
       - echo "Installing dependencies..."
+      - echo "Node.js Version: $(node -v)"
+      - echo "TypeScript Version: $(tsc --version)"
+      - npm install -g typescript@latest
+      - npm install
       - npm -v 
       - node -v
       - |
