@@ -28,7 +28,7 @@ phases:
  
 
   pre_build:
-  commands:
+   commands:
     - echo "Validating environment variables..."
     - test -s .env || (echo "Missing .env file or empty"; exit 1)
     - npm install
