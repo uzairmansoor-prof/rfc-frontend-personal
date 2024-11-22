@@ -15,7 +15,7 @@ phases:
       - npm -v && node -v
       - |
         aws ssm get-parameters-by-path \
-            --path "rfp/dev/FE" \
+            --path "/rfp/dev/FE" \
             --recursive \
             --with-decryption \
             --query "Parameters[].[Name,Value]" \
