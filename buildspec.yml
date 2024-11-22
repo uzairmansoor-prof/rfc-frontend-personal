@@ -15,7 +15,7 @@ phases:
       - npm -v && node -v
       - |
         aws ssm get-parameters-by-path \
-            --path "/rfp/dev/FE" \
+            --path "rfp/dev/FE" \
             --recursive \
             --with-decryption \
             --query "Parameters[].[Name,Value]" \
@@ -26,14 +26,13 @@ phases:
       - echo "Environment variables written to .env file:"
       - cat .env
  
-      # - echo "Replacing the contents of the .env.dev file with actual values..."
-      # - sed -i "s|VITE_API_BASE_PATH=.*|VITE_API_BASE_PATH=$VITE_API_BASE_PATH|" .env.dev
-      # - sed -i "s|VITE_PROMPT_API_BASE_PATH=.*|VITE_PROMPT_API_BASE_PATH=$VITE_PROMPT_API_BASE_PATH|" .env.dev
-      # - sed -i "s|VITE_SOCKET_BASE_PATH=.*|VITE_SOCKET_BASE_PATH=$VITE_SOCKET_BASE_PATH|" .env.dev
- 
+
   pre_build:
-    commands:
-      - npm install
+  commands:
+    - echo "Validating environment variables..."
+    - test -s .env || (echo "Missing .env file or empty"; exit 1)
+    - npm install
+
  
   build:
     commands:
